@@ -1,0 +1,96 @@
+body{
+    background: linear-gradient(135deg, #185a9d, #43cea2);
+    line-height: 1.5;
+}
+.nav{
+    width: 100%;
+    position: fixed;
+    min-height: 60px;
+    border-bottom: 1px solid #ffffff;
+}
+.logo{
+    float: left;
+}
+.logo-content{
+    text-decoration: none;
+    color:#fff;
+    font-family: Russo_One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+}
+
+.top-nav{
+    overflow: hidden;
+    padding-top: 30px;
+}
+
+.top-nav a{
+    float: right;
+    text-align: center;
+    padding-right: 30px;
+    text-decoration: none;
+    font-size: 17px;
+    color: #fff;
+    justify-content: center;
+}
+a{
+    padding: 0px 15px;
+}
+.top-nav a:hover{
+    background-color:#43cea2;
+}
+
+p{
+    font-size: 1.15rem;
+    font-family: 'Josefin sans', sans-serif;
+}
+
+h4 {
+    margin-top: 0px;
+    font-size: 2.8rem;
+    letter-spacing: -.1em;
+    margin-bottom: 1em;
+  }
+  .content-wrapper {
+    background: linear-gradient( 135deg, #185a9d, #43cea2);
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 100px;
+    min-height: 550px;
+
+  }
+  .bg-text{
+    position: absolute;
+    opacity: 0.2;
+    letter-spacing: -.5rem;
+    font-size: 10rem;
+    font-weight: 700;
+
+    font-family: Russo_One;
+  }
+  .g-card p, h4, span {
+      color: #fafafa;
+  }
+  .seprate-line {
+      width: 20px; height: 3px; background: white;
+  }
+  .c-card {
+    margin: auto;
+    top: 100px;
+    float: left;
+    margin-left: 6%;
+    position: relative;
+    width: 320px;
+    min-height: 400px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #02aab0, #00cdac);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 20px 30px 50px 1px rgba(0,0,0,.3);
+  }
+  .bodyHomeFooter{
+      color: #fff;
+  }
