@@ -1,0 +1,148 @@
+.loginbody{
+    background: linear-gradient(135deg, #185a9d, #43cea2);
+}
+.container{
+    width:100%;
+    height: 100%;
+    border: 0px solid #3697fd;
+}
+.loginheader{
+    margin-top:100px;
+    width: 800px;
+    margin-left: 250px;
+    height: 100px;
+    background: linear-gradient(135deg, #185a9d, #7bdbbd);
+   /* -webkit-box-shadow: 0px 6px 6px #70a8ff;
+    -moz-box-shadow: 0px 6px 6px #70a8ff;
+    box-shadow: 0px 6px 6px #70a8ff; */
+}
+.LoginHeaderCenter{
+    margin-left: 270px;
+}
+.WebTextName{
+    margin-top: -45px;
+    margin-left: 70px;
+    margin-right: 70px;
+    size: 60%;
+    color: #ffffff;
+    font-family: Russo_One;
+}
+h1,h2,h3,h3,h4,h5,h6{
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.loginContent{
+    width: 800px;
+    margin-left: 250px;
+    height: 400px;
+    background-color: white;
+    border: 0px solid red;
+    -webkit-box-shadow: 0px 6px 6px #70a8ff;
+    -moz-box-shadow: 0px 6px 6px #70a8ff;
+    box-shadow: 0px 6px 6px #70a8ff;
+}
+.loginContentIconSection {
+    width: 370px;
+    margin-left: 0px;
+    height: 400px;
+    border: 0px solid red;
+}
+.loginContentFieldSection {
+    width: 400px;
+    margin-left: 400px;
+    margin-top: -400px;
+    height: 400px;
+    border: 0px solid red;
+}
+.loaginTbableFields {
+    margin-top: 100px;
+    margin-left: 70px;
+}
+.loginImageIcon {
+    margin-left: 70px;
+    margin-top: 80px;
+}
+a {
+    font-family: Russo_One;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666666;
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+.login_and_sinup_exchange_link {
+    text-decoration: underline;
+    color: #70A8FF;
+    font-size: 18px;
+}
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+    background-color: transparent;
+}
+.loginButton {
+    background-color: #70A8FF;
+    width: 125px;
+    height: 30px;
+    color: white;
+}
+.CancelButton {
+    border: 1px solid #70A8FF;
+    width: 125px;
+    height: 30px;
+}
+.loginInFielddv {
+    padding-bottom: 10px;
+    border: 1px solid #8AB3F1;
+    width: 250px;
+}
+p {
+    font-family: Russo_One;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666666;
+    margin: 0px;
+}
+input {
+    outline: none;
+    border: none;
+}
+.loginInField {
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.loginInFielddv {
+    padding-bottom: 5px;
+    border: 1px solid #8AB3F1;
+    width: 250px;
+}
+.bodyHomeFooter{
+    color: #fff;
+    padding-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+a {
+    font-family: Russo_One;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666666;
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+.footer {
+    margin-top: 10px;
+    color: #ffffff;
+}
+.loginButtonstd {
+    padding-top: 15px;
+}
