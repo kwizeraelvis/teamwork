@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teamwork</title>
+    <link rel="stylesheet" type="text/css" href="../../css/home.css">
+</head>
+<body>
+
+<div class="container">
+    <nav class="top-navigation">
+        <div class="name-div in-top">
+            <span class="web-name"><b><strong>Team</strong></b>Work</span>
+        </div>
+        <div class="profile-nav">
+            <div class="icon-profile-nav">
+                <img class="icon-profile" src="../.../../assets/profiles/user1.jpg" alt=""/>
+            </div>
+
+        </div>
+    </nav>
+    <div class="body-contant-navigation">
+        <table class="tast_content_main"  height="100%" border="0">
+            <tr>
+                <td>
+                    <div class="left-navigation">
+                        <section id="left-nav-container">
+                            <div class="left-navigation-drawer open active" id="left-nav-open">
+                                <div class="left-navigation-dawer-profile-section">
+                                    <div class="left-navigation-dawer-profile-section-profile-image-div">
+                                        <img class="left-navigation-dawer-profile-section-profile-image" src="../../assets/profiles/user1.jpg"/>
+                                    </div>
+                                    <div class="left-navigation-dawer-profile-section-profile-name-div">
+                                        <span class="left-navigation-dawer-profile-section-profile-name">Kwizera Aime Elvis</span>
+                                    </div>
+                                    <div class="left-navigation-dawer-profile-section-profile-status-div">
+                                        <span class="left-navigation-dawer-profile-section-profile-status">Admin</span>
+                                    </div>
+                                    <div class="left-navigation-dawer-profile-section-profile-status-div">
+                                        <span class="left-navigation-dawer-profile-section-profile-status">Logged In</span>
+                                    </div>
+                                </div>
+                                <div class="left-navigation-dawer-opened-button-compose">
+                                    <button onclick="openPage('compose.html')"> Create Article </button>
+                                </div>
+                                <div class="left-navigation-dawer-opened-buttons icon-inbox-open-nav visible" onclick="openPage('../admin-dashboard.html')">
+                                    <div class="left-navigation-dawer-opened-buttons-icons-div">
+                                    </div>
+                                    <div class="left-navigation-dawer-opened-buttons-title-div">
+                                        <span class="left-navigation-dawer-opened-buttons-title"><a class="home-links inbox" href="./admin-dashboard.html">View Articles</a></span>
+                                        <span id="left_menu_inbox_counter" class="menu-counter"></span>
+                                    </div>
+
+                                </div>
+                                <div class="left-navigation-dawer-opened-buttons icon-sent-open-nav" onclick="openPage('user-manager.html')">
+                                    <div class="left-navigation-dawer-opened-buttons-icons-div">
+                                    </div>
+                                    <div class="left-navigation-dawer-opened-buttons-title-div">
+                                        <span class="left-navigation-dawer-opened-buttons-title"><a class="home-links sent" href="./user-manager.html">Manage Users</a></span>
+                                        <span id="left_menu_sent_counter" class="menu-counter"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </td>
+                <td class="task-content-td">
+
+                    <div class="task-content">
+
+                        <div class="content-list">
+                            <div class="content-header">
+                                <div class="g-h-title title">
+                                    <span>Users</span>
+                                </div>
+                                <div class="g-h-title search">
+                                    <input class="search_contents_tools" type="text" name="" placeholder="Search">
+                                    <div class="g-h-menu inbox search" style="margin-right: 50px;">
+                                        <button class="search search_contents_tools" title="Search">
+                                            <i><img  src="../../assets/icons/search.png"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="content-menus"></div>
+                            <div class="line"></div>
+                            <div class="content_list_table">
+
+                                <table border="0" class="groups-table">
+
+                                    <tr>
+                                        <td class="g-t-td"><img class="img-user-row" src="../../assets/profiles/user1.jpg"></td>
+                                        <td class="g-t-td name">Kwizera Aime Elvis</td>
+                                        <td class="g-t-td"><button>Make Admin</button>
+                                        <td class="g-t-td"><button>Block User</button></td>
+                                    </tr>
+                                    <tr class="g-t-tr">
+                                        <td class="g-t-td"><img class="img-user-row" src="../../assets/profiles/user1.jpg"></td>
+                                        <td class="g-t-td name">Higiro Emile</td>
+                                        <td class="g-t-td"><button>Make Admin</button></td>
+                                        <td class="g-t-td"><button>Block User</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="g-t-td"><img class="img-user-row" src="../../assets/profiles/user1.jpg"></td>
+                                        <td class="g-t-td name">Rukundo Eric</td>
+                                        <td class="g-t-td"><button>Make Admin</button></td>
+                                        <td class="g-t-td"><button>Block User</button></td>
+                                </table>
+                            </div>
+                        </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script rel="script" type="text/javascript" src="ui-controller.js"></script>
+
+</body>
+</html>
