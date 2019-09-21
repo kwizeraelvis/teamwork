@@ -6,10 +6,14 @@ branches:
   only:
     - develop
 install:
-  - npm install
+- npm install
 cache:
   directories:
-    - "node_modules"
+  - node_modules
+script: "-npm test -npm run coverage"
+env:
+  global:
+    secure: djpkE7PgLcTLYKwwWyojNNtB+MVj5VNIttxYr2zvVYGeFZ4J3VDuLmBfQv57FDZ1tdAD0kijh6w8FcZXMyJy1okb21bOFnDJPvp+F1gk3K+Bq2EwVVewlzjBqN15X72yzyyRxEfOcR7ju+ls5TgNQPOeN6Rw/sN1NnvkeSb+z2gb1wXBOgc6J51WZKJFVJOgpKP8SpZb0Q0vMLIa7y+hee0vLVTV74+Vf+6uVmXyQOQ9B/77GpfbBSYoITpNttshPz3bpICE4PXGtTEM1MibaUbS758q+g+3GKk5IaoGKTqEAQmQYlVuGQ5nXop6enw8Ki1fHV1VBgMKz7dsQRoT2wRsxKdHE1viXRevQV+Sl+rA6jtXJYmz9xKtQgLS28gKx/IPcPXG0mWTe7p9irCjAfklaD6iMsEJLkuovk5HR126YKTczbYe+0SgcS/GebK8t9u5a7dfVG5MWwuDxnLMMFg/TwBmS5rbUiGfBJOy1odcUlrHSem7XzSBa46UKxsbmHaL4p7Okq9SjdiX3dU6gSSUxXRrP/QuLV2BKfC38pD9eUWes/l/1UDEKnM3GnJTR1oviRZXLgnK5Rx9WCgtQz6TQCJDbr43UrCNbgLdr+E6UmAe3A7UKmXZQt5TRk/Ys0eEYWZndyMPuH/8EIQ/OZcrEDVD5gd7CCNDS51gh5E=
 script:
   - npm run test
 after_success:
