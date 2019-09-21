@@ -1,11 +1,16 @@
+sudo: false
 language: node_js
 node_js:
-  - stable
+  - "11.15.0"
+branches:
+  only:
+    - develop
 install:
   - npm install
 cache:
   directories:
     - "node_modules"
 script:
-  -npm test
-  -npm run coverage
+  - npm run test
+after_success:
+  - npm run coverage
