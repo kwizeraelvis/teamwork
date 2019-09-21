@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "env-cmd -f .env nodemon --exec babel-node index.js",
     "test": "jest --forceExit src/tests/*.test.js",
-    "coverage": "jest --forceExit --coverage"
+    "coverage": "jest --forceExit --coverage",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "codecov": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -56,6 +58,8 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "uuidv4": "^5.0.1"
+    "uuidv4": "^5.0.1",
+    "codecov": "^3.2.0",
+    "coveralls": "^3.0.2"
   }
 }
