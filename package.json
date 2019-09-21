@@ -7,8 +7,7 @@
     "dev": "env-cmd -f .env nodemon --exec babel-node index.js",
     "test": "jest --forceExit src/tests/*.test.js",
     "coverage": "jest --forceExit --coverage",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "codecov": "nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
