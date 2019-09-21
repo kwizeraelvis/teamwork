@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "env-cmd -f .env nodemon --exec babel-node index.js",
-    "test": "env-cmd -f .env jest --forceExit src/tests/*.test.js",
-    "coverage": "env-cmd -f .env jest --forceExit --coverage"
+    "test": "jest --forceExit src/tests/*.test.js",
+    "coverage": "jest --forceExit --coverage"
   },
   "repository": {
     "type": "git",
