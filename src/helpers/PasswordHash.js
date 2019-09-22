@@ -8,6 +8,12 @@ class PasswordHash {
             console.log(e)
         }
     }
-
+    static async CompareHashPassword(Password, HashedPassword){
+        try{
+            return await bcrypt.compare(Password, HashedPassword);
+        }catch(e){
+                console.log(e);
+        }
+    }
 }
 export default PasswordHash;
