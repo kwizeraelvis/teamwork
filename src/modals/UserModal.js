@@ -20,8 +20,8 @@ class UserModal {
             this.user.push(newUser);
             return newUser;
     };
-    findOne(){
-
+    findOne(email){
+        return this.user.find(user => user.email === email);
     }
 }
 

@@ -3,14 +3,17 @@ import bcrypt from 'bcrypt';
 class PasswordHash {
     static async HashPassword(Password){
         try {
-            return await bcrypt.hash(Password,10);
+        const HashedPassword = await bcrypt.hash(Password,10);
+        return HashedPassword;
         } catch (e) {
             console.log(e)
         }
     }
     static async CompareHashPassword(Password, HashedPassword){
         try{
-            return await bcrypt.compare(Password, HashedPassword);
+            const match = await bcrypt.compare(Password, HashedPassword);
+            console.log(match);
+            return match;
         }catch(e){
                 console.log(e);
         }

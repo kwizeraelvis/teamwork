@@ -1,6 +1,6 @@
 import Joi from 'joi';
-import {stringRegex, emailRegex, passwordRegex} from "./regex";
-export default Signup = {
+import {stringRegex, emailRegex, passwordRegex} from "../regex";
+export const Signup = {
     firstName: Joi.string().required().min(1).max(30).regex(stringRegex),
     lastName:  Joi.string().required().min(1).max(30).regex(stringRegex),
     email:     Joi.string().required().email().regex(emailRegex),
