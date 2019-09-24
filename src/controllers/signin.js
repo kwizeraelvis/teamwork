@@ -3,6 +3,7 @@ import UserModal from '../modals/UserModal';
 import PasswordHash from '../helpers/PasswordHash';
 import Auth from '../helpers/Auth';
 
+
 export const SigninUser = async (req, res) => {
     const data = lodash.pick(req.body,['email', 'password']);
     const user = UserModal.findOne(data.email);

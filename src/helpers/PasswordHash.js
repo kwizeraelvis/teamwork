@@ -12,7 +12,6 @@ class PasswordHash {
     static async CompareHashPassword(Password, HashedPassword){
         try{
             const match = await bcrypt.compare(Password, HashedPassword);
-            console.log(match);
             return match;
         }catch(e){
                 console.log(e);
