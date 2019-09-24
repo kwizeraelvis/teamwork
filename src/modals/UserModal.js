@@ -1,10 +1,11 @@
-import uuidv4 from 'uuidv4'
+import uuidv4 from 'uuidv4';
+import PasswordHash from '../helpers/PasswordHash';
 
 class UserModal {
     constructor(){
         this.user=[]
     }
-    save(user){
+    async save(user){
         const newUser = {
             user_id: uuidv4(),
             firstName: user.firstName,
@@ -17,11 +18,12 @@ class UserModal {
             address: user.department,
             isAdmin: user.isAdmin
         };
+            newUser.password = await PasswordHash.HashPassword(newUser.password);
             this.user.push(newUser);
             return newUser;
     };
-    findOne(){
-
+    findOne(email){
+        return this.user.find(user => user.email === email);
     }
 }
 

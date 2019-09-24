@@ -18,4 +18,11 @@ test('Should has user password',async () => {
     const userPassword = '123@Hello123';
     const response = await PasswordHash.HashPassword(userPassword);
     expect(response).toBeString();
+});
+
+test('Should be able to compare to password', async () => {
+    const HashedPassword = await PasswordHash.HashPassword('123@Hello123');
+    const NormalPassword = '123@Hello123';
+    const response = await PasswordHash.CompareHashPassword(NormalPassword, HashedPassword);
+    expect(response).toBe(true);
 })
