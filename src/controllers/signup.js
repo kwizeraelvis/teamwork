@@ -5,7 +5,7 @@ import Auth from '../helpers/Auth';
 export const SignupUser =async(req, res) => {
     try {
         const user = lodash.pick(req.body,['firstName','lastName','email','password','gender','jobRole','department','address','isAdmin']);
-        const saveUser = UserModal.save(user);
+        const saveUser = await UserModal.save(user);
         saveUser.token = Auth.generateUserAuthToken(saveUser);
         return res.status(200).send({
             status: 200,
