@@ -51,6 +51,5 @@ export const AuthToken3 = Auth.generateUserAuthToken(userThree);
 export const setupDummyData = async () => {
     await UserModal.save(userOne);
     await UserModal.save(userTwo);
-    await UserModal.save(userThree);
 };
 
