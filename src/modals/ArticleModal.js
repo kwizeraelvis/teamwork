@@ -7,6 +7,7 @@ class ArticleModal {
     }
     saveArticle (article){
         const newArticle = {
+            article_id: uuidv4(),
             title: article.title,
             article: article.content,
             createdBy: article.email,
