@@ -2,8 +2,10 @@ import 'jest-extended';
 import request from 'supertest';
 import app from '../app';
 import {setupDummyData, userOne, AuthToken1,AuthToken3} from './fixtures/TestData';
+import {SetupDummyDatabase} from './fixtures/ArticleData';
 
 beforeEach(setupDummyData);
+beforeEach(SetupDummyDatabase);
 
 test('Should create a new article for a valid user ', async () => {
     await request(app).post('/articles')
@@ -37,4 +39,19 @@ test('Should not create task with no content/body', async () => {
     .send({
         content:'Dummy Data'
     }).expect(422)
+});
+
+test('Should show all articles in a sorted manner', async () => {
+    await request(app)
+        .get('/feeds')
+        .set('Authorization', AuthToken1)
+        .send()
+        .expect(200)
+});
+
+test('Should not show articles if user is not logged in', async () => {
+    await request(app)
+        .get('/feeds')
+        .send()
+        .expect(401)
 });
