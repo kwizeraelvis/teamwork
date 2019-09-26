@@ -11,10 +11,16 @@ class ArticleModal {
             title: article.title,
             article: article.content,
             createdBy: article.email,
-            createdOn: moment.now()
+            createdOn: Date.now()
         }
         this.articles.push(newArticle);
         return newArticle;
+    }
+    showAll(){
+        const sortedArticles = this.articles.sort((a,b) => {
+            return b.createdOn - a.createdOn
+        });
+        return sortedArticles;
     }
 }
 
