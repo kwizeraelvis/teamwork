@@ -22,6 +22,11 @@ class ArticleModal {
         });
         return sortedArticles;
     }
+    showAllforUser(email){
+        const userArticles = this.articles.filter(article => article.createdBy === email).sort((a,b) =>
+         { return b.createdOn - a.createdOn });
+        return userArticles;
+    }
 }
 
 export default new ArticleModal;
