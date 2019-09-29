@@ -7,7 +7,8 @@ import {SetupDummyDatabase} from './fixtures/ArticleData';
 beforeEach(setupDummyData);
 beforeEach(SetupDummyDatabase);
 
-test('Should create a new article for a valid user ', async () => {
+describe('Article routes tests', () => {
+it('Should create a new article for a valid user ', async () => {
     await request(app).post('/articles')
         .set('Authorization', AuthToken1)
         .send({
@@ -16,7 +17,7 @@ test('Should create a new article for a valid user ', async () => {
         }).expect(200);
 });
 
-test('Should not create article for invalid user', async () => {
+it('Should not create article for invalid user', async () => {
     await request(app).post('/articles')
     .set('Authorization', AuthToken3)
     .send({
@@ -25,7 +26,7 @@ test('Should not create article for invalid user', async () => {
     }).expect(404)
 });
 
-test('Should not create task with no title', async () => {
+it('Should not create task with no title', async () => {
     await request(app).post('/articles')
     .set('Authorization', AuthToken3)
     .send({
@@ -33,7 +34,7 @@ test('Should not create task with no title', async () => {
     }).expect(422)
 });
 
-test('Should not create task with no content/body', async () => {
+it('Should not create task with no content/body', async () => {
     await request(app).post('/articles')
     .set('Authorization',AuthToken1)
     .send({
@@ -41,7 +42,7 @@ test('Should not create task with no content/body', async () => {
     }).expect(422)
 });
 
-test('Should show all articles in a sorted manner', async () => {
+it('Should show all articles in a sorted manner', async () => {
     await request(app)
         .get('/feeds')
         .set('Authorization', AuthToken1)
@@ -49,9 +50,31 @@ test('Should show all articles in a sorted manner', async () => {
         .expect(200)
 });
 
-test('Should not show articles if user is not logged in', async () => {
+it('Should not show articles if user is not logged in', async () => {
     await request(app)
         .get('/feeds')
         .send()
         .expect(401)
+});
+
+it('should return articles for the current user', async() => {
+    await request(app)
+        .get('/feed/me')
+        .set('Authorization', AuthToken1)
+        .send()
+        .expect(200)
+});
+
+it('should not return articles for unregistered user', async() => {
+    await request(app)
+        .get('/feed/me')
+        .send()
+        .expect(401)
+});
+it('should not show articles for user with no articles', async() => {
+    await request(app)
+        .get('/feed/me')
+        .set('Authorization', AuthToken3)
+        .expect(404)
+})
 });
