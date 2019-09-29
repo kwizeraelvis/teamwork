@@ -27,6 +27,15 @@ class ArticleModal {
          { return b.createdOn - a.createdOn });
         return userArticles;
     }
+    findArticle(id){
+        return this.articles.find(article => article.article_id === id)
+    }
+    deleteArticle(id){
+        const article = this.findArticle(id);
+        const index = this.articles.indexOf(article);
+        this.articles.splice(index, 1);
+        return {};
+    }
 }
 
 export default new ArticleModal;

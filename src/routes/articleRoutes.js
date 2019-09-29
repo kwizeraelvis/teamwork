@@ -4,6 +4,7 @@ import {validateNewArticle} from '../middleware/NewArticleValidator';
 import {NewArticle} from '../controllers/CreateArticle';
 import {ShowAllArticles} from '../controllers/ViewArticles';
 import {viewUserArticles} from '../controllers/ViewArticlesByUser';
+import {DeleteanArticle} from '../controllers/DeleteArticle'
 
 const articleRouter = express.Router();
 
@@ -12,6 +13,8 @@ articleRouter.post('/articles', validateNewArticle, VerifyToken.verifyAuthToken,
 articleRouter.get('/feeds', VerifyToken.verifyAuthToken, ShowAllArticles);
 
 articleRouter.get('/feed/me', VerifyToken.verifyAuthToken, viewUserArticles);
+
+articleRouter.delete('/articles/:articleId', VerifyToken.verifyAuthToken, DeleteanArticle);
 
 
 export default articleRouter;
