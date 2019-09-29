@@ -38,7 +38,7 @@ export const article5 = {
     article_id: uuidv4(),
     title: 'Dummy title 5',
     content: 'Dummy data 5',
-    createdBy: userThree.email,
+    createdBy: userTwo.email,
     createdOn: Date.now()
 };
 

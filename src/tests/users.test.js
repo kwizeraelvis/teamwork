@@ -4,8 +4,8 @@ import app from '../app';
 import { userOne, userTwo, userThree, setupDummyData} from './fixtures/TestData';
 
 beforeEach(setupDummyData);
-
-test('should Signup a new User',async () => {
+describe('User Routes Tests', () => {
+it('should Signup a new User',async () => {
     await request(app).post('/auth/signup').send({
     firstName:'Kwizera',
     lastName:'Aime Elvis',
@@ -17,9 +17,9 @@ test('should Signup a new User',async () => {
     isAdmin:true,
     password:'Anj1G@de'
     }).expect(200);
-})
+});
 
-test('Should not signup user with incorrect info',async() => {
+it('Should not signup user with incorrect info',async() => {
     await request(app).post('/auth/signup').send({
         firstName:1522,
         lastName:'Aime Elvis',
@@ -33,7 +33,7 @@ test('Should not signup user with incorrect info',async() => {
 }).expect(422);
 });
 
-test('Should not signup user with missing info',async () => {
+it('Should not signup user with missing info',async () => {
     await request(app).post('/auth/signup').send({
         firstName:1522,
         lastName:'Aime Elvis',
@@ -43,24 +43,31 @@ test('Should not signup user with missing info',async () => {
 }).expect(422);
 });
 
-test('Should signin user with valid info',async() => {
+it('Should signin user with valid info',async() => {
     await request(app).post('/auth/signin').send({
         email: userOne.email,
         password: userOne.password
     }).expect(200);
 });
 
-test('Should not signin user with wrong user email/password',async () => {
+it('Should not signin user with wrong user email/password',async () => {
     await request(app).post('/auth/signin').send({
         email: userOne.email,
         password: userThree.password,
     }).expect(404)
 });
 
-test('Should return an auth token for a correct user',async () => {
+it('Should return an auth token for a correct user',async () => {
     const response = await request(app).post('/auth/signin').send({
         email: userTwo.email,
         password: userTwo.password
     })
     expect(response.body.AuthToken).toBeString();
+});
+it('should not signin a non existent user', async () => {
+    await request(app)
+        .post('/auth/signin')
+        .send({email: userThree.email, password: userThree.password})
+        .expect(404)
+});
 });
