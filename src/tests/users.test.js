@@ -1,11 +1,11 @@
 import 'jest-extended';
 import  request from 'supertest';
 import app from '../app';
-import { userOne, userTwo, userThree, setupDummyData} from './fixtures/TestData';
+import { userOne, userTwo, userThree, setupDummyData,clearDummyData} from './fixtures/TestData';
 
 beforeEach(setupDummyData);
-describe('User Routes Tests', () => {
-it('should Signup a new User',async () => {
+
+test('should Signup a new User',async () => {
     await request(app).post('/auth/signup').send({
     firstName:'Kwizera',
     lastName:'Aime Elvis',
@@ -19,7 +19,7 @@ it('should Signup a new User',async () => {
     }).expect(200);
 });
 
-it('Should not signup user with incorrect info',async() => {
+test('Should not signup user with incorrect info',async() => {
     await request(app).post('/auth/signup').send({
         firstName:1522,
         lastName:'Aime Elvis',
@@ -33,7 +33,7 @@ it('Should not signup user with incorrect info',async() => {
 }).expect(422);
 });
 
-it('Should not signup user with missing info',async () => {
+test('Should not signup user with missing info',async () => {
     await request(app).post('/auth/signup').send({
         firstName:1522,
         lastName:'Aime Elvis',
@@ -43,7 +43,7 @@ it('Should not signup user with missing info',async () => {
 }).expect(422);
 });
 
-it('Should signin user with valid info',async() => {
+test('Should signin user with valid info',async() => {
     await request(app).post('/auth/signin').send({
         email: userOne.email,
         password: userOne.password
@@ -64,10 +64,9 @@ it('Should return an auth token for a correct user',async () => {
     })
     expect(response.body.AuthToken).toBeString();
 });
-it('should not signin a non existent user', async () => {
+test('should not signin a non existent user', async () => {
     await request(app)
         .post('/auth/signin')
         .send({email: userThree.email, password: userThree.password})
         .expect(404)
-});
 });

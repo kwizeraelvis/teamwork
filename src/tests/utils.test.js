@@ -3,9 +3,14 @@ import PasswordHash from '../helpers/PasswordHash';
 import Auth from '../helpers/Auth';
 import uuidv4 from 'uuidv4';
 import faker from 'faker';
+import ArticleModal from '../modals/ArticleModal';
+import {article1,SetupDummyDatabase} from './fixtures/ArticleData'
+import {setupDummyData} from './fixtures/TestData';
 
-describe('Utilities tests', () => {
-it('Should generate auth token for user', () => {
+beforeEach(SetupDummyDatabase);
+beforeEach(setupDummyData)
+
+test('Should generate auth token for user', () => {
     const user = {
         id: uuidv4(),
         email: faker.internet.email(),
@@ -15,28 +20,32 @@ it('Should generate auth token for user', () => {
     expect(response).toBeString()
 });
 
-it('Should has user password',async () => {
+test('Should has user password',async () => {
     const userPassword = '123@Hello123';
     const response = await PasswordHash.HashPassword(userPassword);
     expect(response).toBeString();
 });
 
-it('Should be able to compare to password', async () => {
+test('Should be able to compare to password', async () => {
     const HashedPassword = await PasswordHash.HashPassword('123@Hello123');
     const NormalPassword = '123@Hello123';
     const response = await PasswordHash.CompareHashPassword(NormalPassword, HashedPassword);
     expect(response).toBe(true);
 });
 
-it('Should throw error if password is not a string', async() => {
+test('Should throw error if password is not a string', async() => {
     const HashedPassword = await PasswordHash.HashPassword(1);
     const errormessage = new Error('data must be a string and salt must either be a salt string or a number of rounds')
     expect(HashedPassword).toEqual(errormessage);
 });
 
-it('Should throw error if compare hash password parameters are not strings', async() => {
+test('Should throw error if compare hash password parameters are not strings', async() => {
     const response = await PasswordHash.CompareHashPassword(1,1);
     const errorMsg = new Error('data and hash must be strings');
     expect(response).toEqual(errorMsg);
 });
-});
+
+test('should delete a valid article', async () => {
+    const response = ArticleModal.deleteArticle(article1.article_id);
+    expect(response).toEqual({})
+})

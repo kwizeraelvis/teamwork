@@ -52,4 +52,3 @@ export const setupDummyData = async () => {
     await UserModal.save(userOne);
     await UserModal.save(userTwo);
 };
-

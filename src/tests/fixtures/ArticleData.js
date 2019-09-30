@@ -46,7 +46,4 @@ export const article5 = {
 export const SetupDummyDatabase = () => {
     ArticleModal.saveArticle(article1);
     ArticleModal.saveArticle(article2);
-    ArticleModal.saveArticle(article3);
-    ArticleModal.saveArticle(article4);
-    ArticleModal.saveArticle(article5);
 }

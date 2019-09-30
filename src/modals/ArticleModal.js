@@ -34,7 +34,7 @@ class ArticleModal {
         const article = this.findArticle(id);
         const index = this.articles.indexOf(article);
         this.articles.splice(index, 1);
-        return {};
+        return {}
     }
 }
 
