@@ -101,3 +101,27 @@ test('Should delete an article', async () => {
     .send()
     .expect(204)
 });
+
+test('should update an article', async () => {
+    const myArticle = {
+        title: article1.title,
+        article: article1.content
+    };
+    const saveArticle = ArticleModal.saveArticle(myArticle);
+    await request(app)
+        .patch(`/articles/${saveArticle.article_id}`)
+        .set('Authorization', `Bearer ${AuthToken1}`)
+        .send({
+            title: "This is a custom title"
+        })
+        .expect(200)
+});
+
+test('Should not update non existent article', async () => {
+    const random_id = uuidv4();
+    await request(app)
+        .patch(`/articles/${random_id}`)
+        .set('Authorization', `Bearer ${AuthToken1}`)
+        .send({title: 'Random title'})
+        .expect(404)
+});
