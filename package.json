@@ -2,9 +2,11 @@
   "name": "teamwork",
   "version": "1.0.0",
   "description": "Andela Developer Challenge",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "env-cmd -f .env nodemon --exec babel-node index.js",
+    "build": "babel src -s -d dist",
+    "start": "node dist/index.js",
+    "dev": "env-cmd -f .env nodemon --exec babel-node src/index.js",
     "test": "jest src/tests/*.test.js",
     "coverage": "jest --coverage",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
