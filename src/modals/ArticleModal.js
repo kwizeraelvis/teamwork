@@ -11,7 +11,7 @@ class ArticleModal {
             title: article.title,
             article: article.content,
             createdBy: article.email,
-            createdOn: Date.now()
+            createdOn: Date.now(),
         }
         this.articles.push(newArticle);
         return newArticle;
@@ -35,6 +35,14 @@ class ArticleModal {
         const index = this.articles.indexOf(article);
         this.articles.splice(index, 1);
         return {}
+    }
+    updateArticle(id, data){
+        const article = this.findArticle(id);
+        const index = this.articles.indexOf(article);
+        this.articles[index].title = data['title'] || article.title;
+        this.articles[index].article = data['article'] || article.article;
+        this.articles[index].modifiedOn = Date.now()
+        return this.articles[index]
     }
 }
 
