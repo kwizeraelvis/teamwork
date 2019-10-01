@@ -54,11 +54,9 @@
     width: 100%;
     padding-bottom: 10px;
     background: #ffffff;
-    text-align: left;
+    text-align: center;
     padding-right: 2px;
     padding-top: 2px;
-    color: gray;
-    border: 1px solid #8AB3F1;
 }
 .loginButtonstd {
     padding-top: 15px;
