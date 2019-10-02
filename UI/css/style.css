@@ -94,3 +94,19 @@ h4 {
   .bodyHomeFooter{
       color: #fff;
   }
+
+@media(max-width: 420px){
+    .content-wrapper{
+        width: 100%;
+        height: 100%;
+    }
+    .c-card{
+        width: 100%;
+        height: 50%;
+        margin-left: -20px;
+        margin-bottom: 5px;
+    }
+    .top-nav{
+        justify-content: center;
+    }
+}
