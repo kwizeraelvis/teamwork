@@ -32,8 +32,8 @@
     margin-top: 120px;
 }
 .sinupContentFieldSection {
-    width: 550px;
-    margin-left: 250px;
+    width: 100%;
+    margin-left: 20%;
     margin-top: -400px;
     height: 400px;
     border: 0px solid red;
@@ -51,7 +51,8 @@
 }
 #gender{
     margin: auto;
-    width: 100%;
+    width: 250px;
+    height: 29px;
     padding-bottom: 10px;
     background: #ffffff;
     text-align: left;
@@ -83,4 +84,32 @@ button {
     width: 250px;
     height: 30px;
     color: white;
+}
+@media all and (max-width: 500px){
+    body{
+        background: linear-gradient(90deg, #185a9d, #43cea2);
+    }
+    .sinupImageIcon{
+        visibility: hidden;
+    }
+    .sinupContentFieldSection {
+        width: 100%;
+        margin-left: 20%;
+        height: auto;
+        border: 0px solid red;
+    }
+    td{
+        float: left;
+        display: inline-block;
+        margin-left: -50px;
+    }
+    .logInFielddv{
+        padding-bottom: 0px;
+    }
+    .loginInField{
+        margin-top:2px;
+    }
+    .bodyHomeFooter{
+        margin-bottom: 30%;
+    }
 }

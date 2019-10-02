@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Teamwork</title>
     <link rel="stylesheet" type="text/css" href="../../css/home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
@@ -25,7 +26,7 @@
         <table class="tast_content_main"  height="100%" border="0">
             <tr>
                 <td>
-                    <div class="left-navigation" style="margin-bottom: 440px;">
+                    <div id="left-navigation-manager" class="left-navigation">
                         <section id="left-nav-container">
                             <div class="left-navigation-drawer open active" id="left-nav-open">
                                 <div class="left-navigation-dawer-profile-section">
@@ -43,7 +44,7 @@
                                     </div>
                                 </div>
                                 <div class="left-navigation-dawer-opened-button-compose">
-                                    <button onclick="openPage('compose.html')"> Create Article </button>
+                                    <button onclick="openPage('../compose.html')"> Create Article </button>
                                 </div>
 
                                 <div class="left-navigation-dawer-opened-buttons icon-inbox-open-nav visible" onclick="openPage('./admin-dashboard.html')">
@@ -70,7 +71,7 @@
                 </td>
                 <td class="task-content-td">
 
-                    <div class="task-content" style="margin-bottom: 380px">
+                    <div id="task-content-manager" class="task-content">
 
                         <div class="content-list">
                             <div class="content-header">
