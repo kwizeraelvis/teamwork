@@ -59,7 +59,7 @@ application is to facilitate more interaction between colleagues and facilitate 
 | /articles/:article_id         | DELETE           | Delete an article                         |
 | /feeds                        | GET              | Get all available articles                |
 | /feed/me                      | GET              | Get all the articles for the current user |
-|----------------------------------------------------------------------------------------------|
+
 
 ## Documentation
 
