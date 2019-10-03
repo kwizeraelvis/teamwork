@@ -164,8 +164,9 @@ a {
         width: 100%
     }
     .WebTextName{
-    margin-top: -10%;
-    margin-left: 0%;
+    font-size: 20px;
+    margin-right: 30%;
+     margin-left: -10%;
     color: #ffffff;
     font-family: Russo_One;
     text-align: center;
