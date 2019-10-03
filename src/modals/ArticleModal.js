@@ -1,5 +1,4 @@
 import uuidv4 from 'uuidv4';
-import moment from 'moment';
 
 class ArticleModal {
     constructor() {
