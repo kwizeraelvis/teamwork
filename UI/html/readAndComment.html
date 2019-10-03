@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link rel="stylesheet" type="text/css" href="../css/comments.css">
     <title>TeamWork</title>
 </head>
 <body>
@@ -39,7 +40,7 @@
                         </div>
                     </div>
                     <div class="left-navigation-dawer-opened-button-compose">
-                        <button onclick="openPage('compose.html')"> Back </button>
+                        <button onclick="openPage('./compose.html')"> Back </button>
                     </div>
                     <div class="left-navigation-dawer-opened-buttons icon-inbox-open-nav visible" onclick="openPage('user-dashboard.html')">
                         <div class="left-navigation-dawer-opened-buttons-icons-div">
@@ -93,6 +94,49 @@
                                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo iure, a est tempore quia distinctio maiores, nemo nisi mollitia voluptates repellendus culpa magnam laudantium provident velit? Possimus dignissimos earum debitis?,Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi ducimus doloremque facere quis? Ducimus, veniam ipsum fugit quisquam libero nemo, rerum, molestias dolorum saepe dignissimos ut nesciunt ipsa amet quidem!</p>
                                   </div>
                              </div>
+                             <div class="line"></div>
+                             <div class="content_list_table">
+                                <ul class="comment-section">
+
+                                    <li class="comment user-comment">
+                                        <div class="info">
+                                            <a href="#">Higiro Emile</a>
+                                            <span>4 hours ago</span>
+                                        </div>
+                                        <a class="avatar" href="#">
+                                            <img src="../assets/profiles/user2.jpg" width="35" alt="Profile Avatar" title="Higiro Emile" />
+                                        </a>
+                                        <p>Suspendisse gravida sem?</p>
+                                    </li>
+                                
+                                    <li class="comment author-comment">
+                                        <div class="info">
+                                            <a href="#">Rukundo Eric</a>
+                                            <span>3 hours ago</span>
+                                        </div>
+                                        <a class="avatar" href="#">
+                                            <img src="../assets/profiles/user3.jpg" width="35" alt="Profile Avatar" title="Rukundo Eric" />
+                                        </a>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida sem sit amet molestie portitor.</p>
+                                
+                                    </li>
+                                
+                                    <!-- More comments -->
+                                
+                                    <li class="write-new">
+                                
+                                        <form action="#" method="post">
+                                            <textarea placeholder="Write your comment here" name="comment"></textarea>
+                                            <div>
+                                                <img src="../assets/profiles/user1.jpg" width="35" alt="Profile of Kwizera Elvis" title="Kwizera Elvis" />
+                                                <button type="submit">Submit</button>
+                                            </div>
+                                        </form>
+                                
+                                    </li>
+                                
+                                </ul>
+                             </div>
                       </div>
 
                 </div>
@@ -113,5 +157,6 @@
           </div>
       </footer>
      </div>
+     <script type="text/javascript" src="../js/ui-controller.js"></script>
   </body>
 </html>
