@@ -17,6 +17,7 @@ html{
     display: flex;
     border-radius: 3px;
     flex-wrap: wrap;
+    margin: 30px;
 }
 
 .comment.user-comment{

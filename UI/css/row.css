@@ -139,7 +139,6 @@ table{
    border: 0px solid gray;
 }
 .g-h-title.title{
-    width: 80px;
     float: left;
 }
 .g-h-title.search{
@@ -173,6 +172,10 @@ table{
     margin-top: 5px;
     margin-bottom: 5px;
 
+}
+#line-comment{
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .g-t-td.date{
   font-size: 12px;
