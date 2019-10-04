@@ -3,7 +3,7 @@ import request from 'supertest';
 import uuidv4 from 'uuidv4';
 import app from '../app';
 import {setupDummyData, userOne, AuthToken1,AuthToken3, clearDummyData} from './fixtures/TestData';
-import {SetupDummyDatabase,article1,article5,clearArticleData} from './fixtures/ArticleData';
+import {SetupDummyDatabase,article1,article5,article3,comment1,comment2 } from './fixtures/ArticleData';
 import ArticleModal from '../modals/ArticleModal';
 
 beforeAll(setupDummyData);
@@ -28,20 +28,20 @@ test('Should not create article for invalid user', async () => {
     }).expect(404)
 });
 
-test('Should not create task with no title', async () => {
+test('Should not create article with no title', async () => {
     await request(app).post('/articles')
     .set('Authorization', `Bearer ${AuthToken3}`)
     .send({
         content: 'Dummy Content'
-    }).expect(422)
+    }).expect(400)
 });
 
-test('Should not create task with no content/body', async () => {
+test('Should not create article with no content/body', async () => {
     await request(app).post('/articles')
     .set('Authorization',`Bearer ${AuthToken1}`)
     .send({
         content:'Dummy Data'
-    }).expect(422)
+    }).expect(400)
 });
 
 test('Should show all articles in a sorted manner', async () => {
@@ -60,12 +60,20 @@ test('Should not show articles if user is not logged in', async () => {
 });
 
 test('should return articles for the current user', async() => {
-    await request(app)
+    const resp = await request(app)
         .get('/feed/me')
         .set('Authorization', `Bearer ${AuthToken1}`)
         .send()
         .expect(200)
 });
+
+test('Should not return nothing for user with no articles', async () => {
+    const resp = await request(app)
+        .get('/feed/me')
+        .set('Authorization', `Bearer ${AuthToken3}`)
+        .send()
+        .expect(404)
+})
 
 test('should not return articles for unregistered user', async() => {
     await request(app)
@@ -82,7 +90,7 @@ test('should not show articles for user with no articles', async() => {
 });
 test('Should not delete non existent article', async () => {
     await request(app)
-        .delete(`/articles/${article5.article_id}`)
+        .delete(`/articles/${article3.article_id}`)
         .set('Authorization', `Bearer ${AuthToken1}`)
         .send()
         .expect(404)
@@ -125,3 +133,40 @@ test('Should not update non existent article', async () => {
         .send({title: 'Random title'})
         .expect(404)
 });
+
+test('Should create a comment for a registered user', async() => {
+    const myArticel = {
+        title: "Dummy data 1",
+        content: "Dummy data 2",
+        email:  userOne.email
+    }
+    const saveArticle = ArticleModal.saveArticle(myArticel);
+    await request(app)
+        .post(`/articles/${saveArticle.article_id}/comments`)
+        .set('Authorization', `Bearer ${AuthToken1}`)
+        .send({comment: "This dummy cmmonent"})
+        .expect(201)
+});
+
+test('Should not create a comment for non existent article', async () => {
+    const fakeArticleId = uuidv4();
+    await request(app)
+        .post(`/articles/${fakeArticleId}/comments`)
+        .set('Authorization', `Bearer ${AuthToken1}`)
+        .send({comment: "Another dummy comment"})
+        .expect(404)
+});
+
+test('should not create a comment with no body', async () => {
+    const myArticel = {
+        title: "Dummy data 1",
+        content: "Dummy data 2",
+        email:  userOne.email
+    }
+    const saveArticle = ArticleModal.saveArticle(myArticel);
+    await request(app)
+    .post(`/articles/${saveArticle.article_id}/comments`)
+    .set('Authorization', `Bearer ${AuthToken1}`)
+    .send()
+    .expect(400)
+})

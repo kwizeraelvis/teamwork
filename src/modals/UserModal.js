@@ -6,6 +6,10 @@ class UserModal {
         this.user=[]
     }
     async save(user){
+        const isExist = this.findOne(user.email);
+        if(isExist){
+            throw "User already exists"
+        }
         const newUser = {
             user_id: uuidv4(),
             firstName: user.firstName,

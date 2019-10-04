@@ -7,8 +7,8 @@ import ArticleModal from '../modals/ArticleModal';
 import {article1,SetupDummyDatabase} from './fixtures/ArticleData'
 import {setupDummyData} from './fixtures/TestData';
 
-beforeEach(SetupDummyDatabase);
-beforeEach(setupDummyData)
+beforeAll(SetupDummyDatabase);
+beforeAll(setupDummyData)
 
 test('Should generate auth token for user', () => {
     const user = {
