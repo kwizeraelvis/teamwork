@@ -107,7 +107,7 @@ test('Should delete an article', async () => {
     .delete(`/articles/${saveArticle.article_id}`)
     .set('Authorization', `Bearer ${AuthToken1}`)
     .send()
-    .expect(204)
+    .expect(200)
 });
 
 test('should update an article', async () => {
