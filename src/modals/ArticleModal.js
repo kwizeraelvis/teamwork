@@ -1,4 +1,5 @@
 import uuidv4 from 'uuidv4';
+import lodash from 'lodash';
 
 class ArticleModal {
     constructor() {

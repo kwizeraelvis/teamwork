@@ -16,6 +16,6 @@ export const SignupUser =async(req, res) => {
             }
         })
     } catch (e) {
-        return res.status(400).send({status: 400, message: e});
+        return res.status(409).send({status: 409, message: e});
     }
 }

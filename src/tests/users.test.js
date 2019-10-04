@@ -3,7 +3,7 @@ import  request from 'supertest';
 import app from '../app';
 import { userOne, userTwo, userThree, setupDummyData,clearDummyData} from './fixtures/TestData';
 
-beforeEach(setupDummyData);
+beforeAll(setupDummyData);
 
 test('should Signup a new User',async () => {
     await request(app).post('/auth/signup').send({
@@ -19,6 +19,20 @@ test('should Signup a new User',async () => {
     }).expect(200);
 });
 
+test('Should not signup existing user', async() => {
+    await request(app).post('/auth/signup').send({
+        firstName:'Kwizera',
+        lastName:'Aime Elvis',
+        email:'elvis@gmail.com',
+        gender:'male',
+        jobRole:'Product Manager',
+        department:'Product Design',
+        address:'kigali',
+        isAdmin:true,
+        password:'Anj1G@de'
+        }).expect(409);
+})
+
 test('Should not signup user with incorrect info',async() => {
     await request(app).post('/auth/signup').send({
         firstName:1522,
@@ -30,7 +44,7 @@ test('Should not signup user with incorrect info',async() => {
         address:'kigali',
         isAdmin:true,
         password: 1234
-}).expect(422);
+}).expect(400);
 });
 
 test('Should not signup user with missing info',async () => {
@@ -40,7 +54,7 @@ test('Should not signup user with missing info',async () => {
         email:'elvis@gmail.com',
         gender:'male',
         jobRole:'Product Manager'
-}).expect(422);
+}).expect(400);
 });
 
 test('Should signin user with valid info',async() => {
@@ -70,3 +84,9 @@ test('should not signin a non existent user', async () => {
         .send({email: userThree.email, password: userThree.password})
         .expect(404)
 });
+
+test('Should not signin user with missing email/password', async () => {
+    await request(app).post('/auth/signin').send({
+        email: userOne.email,
+    }).expect(400)
+})

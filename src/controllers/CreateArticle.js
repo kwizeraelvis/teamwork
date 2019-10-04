@@ -3,7 +3,6 @@ import lodash from 'lodash';
 
 
 export const NewArticle = (req, res) => {
-    try{
     const article = lodash.pick(req.body,['title','content']);
     article.email = req.user.email;
     const saveArticle = ArticleModal.saveArticle(article);
@@ -16,7 +15,4 @@ export const NewArticle = (req, res) => {
             WrittenBy: saveArticle.createdBy
         }
     });
-} catch(error){
-    res.status(404).send({status: 404, error: error});
-}
 }
