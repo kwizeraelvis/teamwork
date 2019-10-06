@@ -71,7 +71,7 @@ The UI Templates can be found  at : <https://kwizeraelvis.github.io/teamwork/UI>
 
 ## Status
 
-The project is still under development
+The project is stalled
 
 ## Shoutouts
 
