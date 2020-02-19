@@ -58,7 +58,7 @@
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "uuidv4": "^5.0.1",
-    "codecov": "^3.2.0",
+    "codecov": "^3.6.5",
     "coveralls": "^3.0.2",
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
