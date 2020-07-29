@@ -45,8 +45,8 @@
     "winston": "^3.2.1"
   },
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.6.0",
-    "@babel/runtime": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.10.4",
+    "@babel/runtime": "^7.10.4",
     "@hapi/joi": "^16.1.1",
     "bcrypt": "^3.0.6",
     "dotenv": "^8.1.0",
@@ -60,9 +60,9 @@
     "uuidv4": "^5.0.1",
     "codecov": "^3.7.1",
     "coveralls": "^3.0.2",
-    "@babel/cli": "^7.6.0",
-    "@babel/core": "^7.6.0",
-    "@babel/node": "^7.6.1",
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/node": "^7.10.4",
     "morgan": "^1.9.1"
   }
 }
